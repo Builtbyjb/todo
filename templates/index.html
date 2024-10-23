@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Todo</title>
+    <link href="/static/style.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/a1ada430a2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="">
+      <h1>Todo</h1>
+      <div>
+        <form action="">
+          <input
+            type="text"
+            id="task-text"
+            name="task-text"
+            placeholder="Add Task"
+          />
+          <input
+            type="submit"
+            id="task-submit"
+            name="task-submit"
+            value="add-task"
+          />
+        </form>
+      </div>
+      {% for task in tasks %}
+      <div>
+        <p id="task-text-{{task.id}}" data-taskid="{{ task.id }}">
+          {{ task.text }}
+        </p>
+        <button>Completed</button>
+        <button>Edit</button>
+        <button>delete</button>
+      </div>
+      {% endfor %}
+    </div>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
